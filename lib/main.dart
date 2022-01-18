@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    // root widget
-    home: Scaffold(
+      // root widget
+      home: Home()));
+}
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         title: Text(
           'Hello Noobs',
@@ -24,9 +32,15 @@ void main() {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
-        child: Text('Click'),
+        child: Text(
+          '+',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         backgroundColor: Colors.black,
       ),
-    ),
-  ));
+    );
+  }
 }
