@@ -23,12 +23,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: Center(
-        child: Text(
-          'Hello How are You',
-          style: TextStyle(
-            color: Colors.blueAccent,
-          ),
-        ),
+        child: Image.asset('assets/image1.png'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
