@@ -23,18 +23,13 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: Center(
-          child: RaisedButton.icon(
-        onPressed: () {},
-        icon: Icon(
-          Icons.mail,
-          color: Colors.blueAccent,
+        child: IconButton(
+          onPressed: () {
+            print("Mail");
+          },
+          icon: Icon(Icons.mail),
         ),
-        label: Text(
-          'Mail Me',
-          style: TextStyle(color: Colors.blueAccent),
-        ),
-        color: Colors.black,
-      )),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         child: Text(
