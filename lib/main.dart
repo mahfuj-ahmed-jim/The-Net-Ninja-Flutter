@@ -23,12 +23,18 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: Center(
-        child: Icon(
-          Icons.airport_shuttle,
+          child: RaisedButton.icon(
+        onPressed: () {},
+        icon: Icon(
+          Icons.mail,
           color: Colors.blueAccent,
-          size: 60,
         ),
-      ),
+        label: Text(
+          'Mail Me',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        color: Colors.black,
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         child: Text(
