@@ -22,13 +22,11 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: Center(
-        child: IconButton(
-          onPressed: () {
-            print("Mail");
-          },
-          icon: Icon(Icons.mail),
-        ),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        margin: EdgeInsets.all(30),
+        color: Colors.green,
+        child: Text('Hello'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
