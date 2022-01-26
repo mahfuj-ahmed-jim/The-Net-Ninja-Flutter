@@ -1,4 +1,3 @@
-import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'quote.dart';
 import 'quote_card.dart';
@@ -36,7 +35,15 @@ class _QuoteListState extends State<QuoteList> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: quoteList.map((quote) => QuoteCard(quote: quote)).toList(),
+          children: quoteList
+              .map((quote) => QuoteCard(
+                  quote: quote,
+                  delete: () {
+                    setState(() {
+                      quoteList.remove(quote);
+                    });
+                  }))
+              .toList(),
         ),
       ),
     );
