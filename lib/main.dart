@@ -22,43 +22,36 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: Column(
+      body: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(20.00),
-                color: Colors.cyan,
-                child: Text('One'),
-              ),
-              Container(
-                padding: EdgeInsets.all(30.00),
-                color: Colors.red,
-                child: Text('Two'),
-              ),
-              Container(
-                padding: EdgeInsets.all(40.00),
-                color: Colors.green,
-                child: Text('Three'),
-              ),
-            ],
+          Expanded(
+            flex: 2,
+            child: Image.asset('assets/image1.png'),
           ),
-          Container(
-            padding: EdgeInsets.all(20.00),
-            color: Colors.cyan,
-            child: Text('One'),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              color: Colors.red,
+              child: Text("One"),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(30.00),
-            color: Colors.red,
-            child: Text('Two'),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30),
+              color: Colors.blueAccent,
+              child: Text("Two"),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(40.00),
-            color: Colors.green,
-            child: Text('Three'),
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(40),
+              color: Colors.yellowAccent,
+              child: Text("Three"),
+            ),
           ),
         ],
       ),
