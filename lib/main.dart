@@ -1,70 +1,59 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(MaterialApp(
       // root widget
-      home: Home()));
+      home: QuoteList()));
 }
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class QuoteList extends StatefulWidget {
+  const QuoteList({Key? key}) : super(key: key);
+
+  @override
+  _QuoteListState createState() => _QuoteListState();
+}
+
+class _QuoteListState extends State<QuoteList> {
+  List<Quote> quoteList = [
+    Quote(author: 'Mahfuj', quote: 'Be Like Bro'),
+    Quote(author: 'Ahmed', quote: 'Stay Safe, Stay Happy'),
+    Quote(author: 'Jim', quote: 'Be Cool')
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
-        title: Text(
-          'Hello Noobs',
-          style: TextStyle(
-            color: Colors.blueAccent,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.black,
+        title: Text('Noobs Quote'),
+        backgroundColor: Colors.grey[900],
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: Image.asset('assets/image1.png'),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.red,
-              child: Text("One"),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.blueAccent,
-              child: Text("Two"),
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: EdgeInsets.all(40),
-              color: Colors.yellowAccent,
-              child: Text("Three"),
-            ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: null,
-        child: Text(
-          '+',
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: quoteList.map((quote) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Row(
+                children: [
+                  Text(
+                    '${quote.author} : ',
+                    style: TextStyle(color: Colors.blueAccent, fontSize: 20),
+                  ),
+                  Text(
+                    '"${quote.quote}"',
+                    style: TextStyle(color: Colors.grey, fontSize: 18),
+                  ),
+                ],
+              ),
+            );
+          }).toList(),
         ),
-        backgroundColor: Colors.black,
       ),
     );
   }
